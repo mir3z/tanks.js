@@ -1,0 +1,27 @@
+{
+  "name": "tanks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server -d --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mirz <that.mirz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "lodash.clamp": "^4.0.3",
+    "lodash.memoize": "^4.1.2",
+    "lodash.noop": "^3.0.1",
+    "lodash.random": "^3.2.0"
+  }
+}

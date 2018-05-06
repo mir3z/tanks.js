@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanks!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-family: "Rubik", sans-serif;
+            font-size: 16px;
+            user-select: none;
+            color: #333;
+        }
+
+        .dialog {
+            border: 1px solid #e0e0e0;
+            min-width: 300px;
+            background: #ccc;
+            align-self: center;
+            padding: 14px;
+            border-radius: 2px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .rank-table-header {
+            font-size: 21px;
+            text-align: center;
+        }
+
+        .rank-table-subheader {
+            text-align: center;
+            border-bottom: 1px solid #777;
+            margin-bottom: 16px;
+            margin-top: 5px;
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .btn.rank-table-next-btn {
+            margin: 16px auto 0;
+            display: block;
+        }
+
+        .btn {
+            box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset, 0 0 6px rgba(0,0,0,.2) inset;
+            border: transparent;
+            background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+            text-decoration: none;
+            border-radius: 2px;
+            color: #333;
+            font-size: 15px;
+            padding: 7px 16px;
+            white-space: nowrap;
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            font-family: "Rubik", sans-serif;
+        }
+        .btn:hover {
+            background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+            box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset, 0 0 6px rgba(0,0,0,.2) inset;
+        }
+
+        .btn:active {
+            box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset, 0 0 6px rgba(0,0,0,.5) inset;
+            padding: 8px 15px 6px 17px;
+        }
+
+        .rank-row {
+            display: flex;
+        }
+
+        .player-rank {
+            flex: 0 0 45px;
+        }
+
+        .player-name {
+            flex: 1 1 auto;
+        }
+
+        .player-score {
+            flex: 1 1 auto;
+            text-align: right;
+        }
+
+        .status-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            font-family: "Rubik", sans-serif;
+            font-size: 13px;
+            padding: 0 10px;
+            box-shadow: 0 0 5px 0 #555;
+        }
+
+        .status-bar-weapon,
+        .status-bar-label {
+            flex: 0 0 auto;
+            margin-right: 50px;
+            min-width: 50px;
+        }
+
+        .status-bar-weapon {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .status-bar-weapon-icon {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 12px;
+            height: 20px;
+            flex: 0 0 30px;
+        }
+    </style>
+    <script src="app.js" type="application/javascript" defer></script>
+</head>
+<body>
+    <canvas id="layer-0"></canvas>
+    <canvas id="layer-1"></canvas>
+    <canvas id="layer-2"></canvas>
+    <canvas id="layer-3"></canvas>
+    <canvas id="layer-4"></canvas>
+    <div id="ui"></div>
+</body>
+</html>
