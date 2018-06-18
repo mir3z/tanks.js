@@ -45,7 +45,6 @@ export default function Missile(context) {
     };
 
     const onTerrainCollision = (x, y) => {
-        console.warn("TERRAIN COLLISION", x, y);
         groundExploded(x);
 
         const effects = [];
@@ -65,8 +64,6 @@ export default function Missile(context) {
     };
 
     const onPlayerCollision = players => {
-        console.warn("PLAYER COLLISION", players);
-
         const effects = [];
         players.forEach(player => {
             assignDamage({ player, damage: 100 });

@@ -41,7 +41,6 @@ export default function Player({ name, x, y, armory, tank, score = 0, dead = fal
         },
 
         addDamage(damage) {
-            console.warn("--DAMAGE--", damage);
             const nextStamina = tank.stamina - damage;
             return update({
                 dead: nextStamina <= 0,

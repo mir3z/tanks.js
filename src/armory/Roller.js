@@ -34,8 +34,6 @@ export default function Roller(context) {
     };
 
     const onPlayerCollision = players => {
-        console.warn("PLAYER COLLISION", players);
-
         const effects = [];
         players.forEach(player => {
             assignDamage({ player, damage: 100 });
@@ -101,7 +99,6 @@ export default function Roller(context) {
     };
 
     const startRolling = (x, y) => {
-        console.warn("ROLLING", x, y);
         const dx = getTerrain().getRollDirection(x);
         createTimer().immediate(rollingLoop(dx, x, createCollisionDetector()));
     };

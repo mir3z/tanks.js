@@ -106,8 +106,6 @@ export default function main(seed, layers, raf, keyListener) {
     };
 
     const bindAction = (action) => (...args) => store.dispatch(action(...args));
-    const bindActions = (...actions) => actions
-        .reduce((acc, action) => ({ ...acc, [action.name]: bindAction(action) }), {});
 
     const weaponContext = {
         createTimer: () => Timer(raf()),
@@ -119,7 +117,10 @@ export default function main(seed, layers, raf, keyListener) {
         createCollisionDetector: () => CollisionDetector(collisionDetectorContext),
         explosion: (...args) => createExplosionEffect(effectsContext)(...args),
         burn: (...args) => createBurnEffect(effectsContext)(...args),
-        ...bindActions(firingStart, firingEnd, assignDamage, groundExploded)
+        firingStart: bindAction(firingStart),
+        firingEnd: bindAction(firingEnd),
+        assignDamage: bindAction(assignDamage),
+        groundExploded: bindAction(groundExploded)
     };
 
     function PlayerArmory(armory = [], idx = 0) {

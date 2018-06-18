@@ -22,11 +22,9 @@ export function ParticlesManager({ createTimer, renderer }) {
 
             if (emitter.isDone()) {
                 delete queue[id];
-                console.warn("removing...", id);
 
                 if (Object.keys(queue).length === 0) {
                     timer.stop();
-                    console.warn("stopping...");
                 }
             }
         });
@@ -37,12 +35,10 @@ export function ParticlesManager({ createTimer, renderer }) {
     return {
         schedule(emitter) {
             if (!Object.keys(queue).length) {
-                console.warn("starting...");
                 timer.start();
             }
 
             const id = __id++;
-            console.warn("scheduling...", id);
             queue[id] = emitter;
         },
 
