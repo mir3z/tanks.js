@@ -2,7 +2,7 @@
 
 [Scorched Earth](https://en.wikipedia.org/wiki/Scorched_Earth_(video_game)) based game in JavaScript.
 
-:arrow_right: [Try it](https://cdn.rawgit.com/mir3z/tanks.js/db455d10/dist/index.html) :arrow_left:
+:arrow_right: [Try it](https://cdn.rawgit.com/mir3z/tanks.js/9e11875b/dist/index.html) :arrow_left:
 
 ## Controlling
 * PgUp, Arrow Up - increase power
